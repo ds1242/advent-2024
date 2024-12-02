@@ -3,6 +3,7 @@
 def main():
     a = []
     b = []
+    output = []
 
     f = open("advent-1-input.txt", "r")
     for x in f:
@@ -12,7 +13,15 @@ def main():
 
     quicksort(a)
     quicksort(b)
-    print(len(b))
+    for i in range(len(a)):
+        if a[i] > b[i]:
+            output.append(a[i] - b[i])
+            continue
+        output.append(b[i] - a[i])
+
+    print(sum(output))
+
+        
 
 
 
